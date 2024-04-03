@@ -36,5 +36,28 @@
         </p>
       </div>
     </div>
+    <div class="my-10">
+      <form action="/create-person" method="post">
+        <label for="name">Submit a name here: </label>
+        <input type="text" name="name" id="name" class="p-3 border-2 rounded-xl">
+        <label for="id">Person ID: </label>
+        <input type="number" name="id" id="id">
+        <button type="submit" class="p-3 border-2 rounded-xl">Submit</button>
+      </form>
+      <hr>
+      <form action="/delete-person" method="post">
+        <label for="name">Delete this person: </label>
+        <input type="text" name="name" id="name" class="p-3 border-2 rounded-xl">
+        <button type="submit" class="p-3 border-2 rounded-xl">Submit</button>
+      </form>
+      <hr>
+      <form action="/update-person" method="post">
+        <label for="id">Update this person: </label>
+        <input type="number" name="id" id="id"></input>
+        <label for="name">Into this name: </label>
+        <input type="text" name="name" id="name">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </body>
 </html>

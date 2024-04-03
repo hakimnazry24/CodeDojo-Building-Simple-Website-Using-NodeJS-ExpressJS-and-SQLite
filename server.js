@@ -37,4 +37,32 @@ app.get("/persons", (req, res) => {
     });
 });
 
+
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+app.post("/create-person", (req, res) => {
+    const name = req.body.name;
+    const id = parseInt(req.body.id);
+    
+    db.createPerson(id, name);
+    res.redirect("/");
+});
+
+app.post("/delete-person", (req, res) => {
+    const name = req.body.name;
+    db.deletePerson(name);
+    res.redirect("/");
+})
+
+app.post("/update-person", (req, res) => {
+    const id = parseInt(req.body.id);
+    const name = req.body.name;
+    db.updatePerson(id, name);
+    res.redirect("/");
+})
+
 app.listen(port, () => console.log("server is running"), );
+
+module.exports = {app, port}
